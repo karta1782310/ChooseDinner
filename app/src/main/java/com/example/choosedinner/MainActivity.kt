@@ -16,6 +16,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DiffUtil
 import com.google.android.material.navigation.NavigationView
 import com.yuyakaido.android.cardstackview.*
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.InputStream
+import java.net.URL
+import java.nio.channels.AsynchronousFileChannel.open
 import java.util.*
 
 class MainActivity : AppCompatActivity(), CardStackListener {
@@ -23,7 +28,10 @@ class MainActivity : AppCompatActivity(), CardStackListener {
     private val drawerLayout by lazy { findViewById<DrawerLayout>(R.id.drawer_layout) }
     private val cardStackView by lazy { findViewById<CardStackView>(R.id.card_stack_view) }
     private val manager by lazy { CardStackLayoutManager(this, this) }
-    private val adapter by lazy { CardStackAdapter(createSpots()) }
+//    private val adapter by lazy { CardStackAdapter(createSpots()) }
+
+    private val adapter by lazy { RestaurantCardStackAdapter(createRestaurants()) }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,13 +92,13 @@ class MainActivity : AppCompatActivity(), CardStackListener {
         val navigationView = findViewById<NavigationView>(R.id.navigation_view)
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.reload -> reload()
-                R.id.add_spot_to_first -> addFirst(1)
-                R.id.add_spot_to_last -> addLast(1)
-                R.id.remove_spot_from_first -> removeFirst(1)
-                R.id.remove_spot_from_last -> removeLast(1)
-                R.id.replace_first_spot -> replace()
-                R.id.swap_first_for_last -> swap()
+//                R.id.reload -> reload()
+//                R.id.add_spot_to_first -> addFirst(1)
+//                R.id.add_spot_to_last -> addLast(1)
+//                R.id.remove_spot_from_first -> removeFirst(1)
+//                R.id.remove_spot_from_last -> removeLast(1)
+//                R.id.replace_first_spot -> replace()
+//                R.id.swap_first_for_last -> swap()
             }
             drawerLayout.closeDrawers()
             true
@@ -158,109 +166,118 @@ class MainActivity : AppCompatActivity(), CardStackListener {
     }
 
     private fun paginate() {
-        val old = adapter.getSpots()
-        val new = old.plus(createSpots())
-        val callback = SpotDiffCallback(old, new)
+        val old = adapter.getRestaurants()
+        val new = old.plus(createRestaurants())
+        val callback = RestaurantDiffCallback(old, new)
         val result = DiffUtil.calculateDiff(callback)
-        adapter.setSpots(new)
+        adapter.setRestaurants(new)
         result.dispatchUpdatesTo(adapter)
     }
 
-    private fun reload() {
-        val old = adapter.getSpots()
-        val new = createSpots()
-        val callback = SpotDiffCallback(old, new)
-        val result = DiffUtil.calculateDiff(callback)
-        adapter.setSpots(new)
-        result.dispatchUpdatesTo(adapter)
-    }
-
-    private fun addFirst(size: Int) {
-        val old = adapter.getSpots()
-        val new = mutableListOf<Spot>().apply {
-            addAll(old)
-            for (i in 0 until size) {
-                add(manager.topPosition, createSpot())
-            }
-        }
-        val callback = SpotDiffCallback(old, new)
-        val result = DiffUtil.calculateDiff(callback)
-        adapter.setSpots(new)
-        result.dispatchUpdatesTo(adapter)
-    }
-
-    private fun addLast(size: Int) {
-        val old = adapter.getSpots()
-        val new = mutableListOf<Spot>().apply {
-            addAll(old)
-            addAll(List(size) { createSpot() })
-        }
-        val callback = SpotDiffCallback(old, new)
-        val result = DiffUtil.calculateDiff(callback)
-        adapter.setSpots(new)
-        result.dispatchUpdatesTo(adapter)
-    }
-
-    private fun removeFirst(size: Int) {
-        if (adapter.getSpots().isEmpty()) {
-            return
-        }
-
-        val old = adapter.getSpots()
-        val new = mutableListOf<Spot>().apply {
-            addAll(old)
-            for (i in 0 until size) {
-                removeAt(manager.topPosition)
-            }
-        }
-        val callback = SpotDiffCallback(old, new)
-        val result = DiffUtil.calculateDiff(callback)
-        adapter.setSpots(new)
-        result.dispatchUpdatesTo(adapter)
-    }
-
-    private fun removeLast(size: Int) {
-        if (adapter.getSpots().isEmpty()) {
-            return
-        }
-
-        val old = adapter.getSpots()
-        val new = mutableListOf<Spot>().apply {
-            addAll(old)
-            for (i in 0 until size) {
-                removeAt(this.size - 1)
-            }
-        }
-        val callback = SpotDiffCallback(old, new)
-        val result = DiffUtil.calculateDiff(callback)
-        adapter.setSpots(new)
-        result.dispatchUpdatesTo(adapter)
-    }
-
-    private fun replace() {
-        val old = adapter.getSpots()
-        val new = mutableListOf<Spot>().apply {
-            addAll(old)
-            removeAt(manager.topPosition)
-            add(manager.topPosition, createSpot())
-        }
-        adapter.setSpots(new)
-        adapter.notifyItemChanged(manager.topPosition)
-    }
-
-    private fun swap() {
-        val old = adapter.getSpots()
-        val new = mutableListOf<Spot>().apply {
-            addAll(old)
-            val first = removeAt(manager.topPosition)
-            val last = removeAt(this.size - 1)
-            add(manager.topPosition, last)
-            add(first)
-        }
-        val callback = SpotDiffCallback(old, new)
-        val result = DiffUtil.calculateDiff(callback)
-        adapter.setSpots(new)
-        result.dispatchUpdatesTo(adapter)
+//    private fun paginate() {
+//        val old = adapter.getSpots()
+//        val new = old.plus(createSpots())
+//        val callback = SpotDiffCallback(old, new)
+//        val result = DiffUtil.calculateDiff(callback)
+//        adapter.setSpots(new)
+//        result.dispatchUpdatesTo(adapter)
+//    }
+//
+//    private fun reload() {
+//        val old = adapter.getSpots()
+//        val new = createSpots()
+//        val callback = SpotDiffCallback(old, new)
+//        val result = DiffUtil.calculateDiff(callback)
+//        adapter.setSpots(new)
+//        result.dispatchUpdatesTo(adapter)
+//    }
+//
+//    private fun addFirst(size: Int) {
+//        val old = adapter.getSpots()
+//        val new = mutableListOf<Spot>().apply {
+//            addAll(old)
+//            for (i in 0 until size) {
+//                add(manager.topPosition, createSpot())
+//            }
+//        }
+//        val callback = SpotDiffCallback(old, new)
+//        val result = DiffUtil.calculateDiff(callback)
+//        adapter.setSpots(new)
+//        result.dispatchUpdatesTo(adapter)
+//    }
+//
+//    private fun addLast(size: Int) {
+//        val old = adapter.getSpots()
+//        val new = mutableListOf<Spot>().apply {
+//            addAll(old)
+//            addAll(List(size) { createSpot() })
+//        }
+//        val callback = SpotDiffCallback(old, new)
+//        val result = DiffUtil.calculateDiff(callback)
+//        adapter.setSpots(new)
+//        result.dispatchUpdatesTo(adapter)
+//    }
+//
+//    private fun removeFirst(size: Int) {
+//        if (adapter.getSpots().isEmpty()) {
+//            return
+//        }
+//
+//        val old = adapter.getSpots()
+//        val new = mutableListOf<Spot>().apply {
+//            addAll(old)
+//            for (i in 0 until size) {
+//                removeAt(manager.topPosition)
+//            }
+//        }
+//        val callback = SpotDiffCallback(old, new)
+//        val result = DiffUtil.calculateDiff(callback)
+//        adapter.setSpots(new)
+//        result.dispatchUpdatesTo(adapter)
+//    }
+//
+//    private fun removeLast(size: Int) {
+//        if (adapter.getSpots().isEmpty()) {
+//            return
+//        }
+//
+//        val old = adapter.getSpots()
+//        val new = mutableListOf<Spot>().apply {
+//            addAll(old)
+//            for (i in 0 until size) {
+//                removeAt(this.size - 1)
+//            }
+//        }
+//        val callback = SpotDiffCallback(old, new)
+//        val result = DiffUtil.calculateDiff(callback)
+//        adapter.setSpots(new)
+//        result.dispatchUpdatesTo(adapter)
+//    }
+//
+//    private fun replace() {
+//        val old = adapter.getSpots()
+//        val new = mutableListOf<Spot>().apply {
+//            addAll(old)
+//            removeAt(manager.topPosition)
+//            add(manager.topPosition, createSpot())
+//        }
+//        adapter.setSpots(new)
+//        adapter.notifyItemChanged(manager.topPosition)
+//    }
+//
+//    private fun swap() {
+//        val old = adapter.getSpots()
+//        val new = mutableListOf<Spot>().apply {
+//            addAll(old)
+//            val first = removeAt(manager.topPosition)
+//            val last = removeAt(this.size - 1)
+//            add(manager.topPosition, last)
+//            add(first)
+//        }
+//        val callback = SpotDiffCallback(old, new)
+//        val result = DiffUtil.calculateDiff(callback)
+//        adapter.setSpots(new)
+//        result.dispatchUpdatesTo(adapter)
     }
 
     private fun createSpot(): Spot {
@@ -284,6 +301,46 @@ class MainActivity : AppCompatActivity(), CardStackListener {
         spots.add(Spot(name = "Big Ben", city = "London", url = "https://source.unsplash.com/CdVAUADdqEc/600x800"))
         spots.add(Spot(name = "Great Wall of China", city = "China", url = "https://source.unsplash.com/AWh9C-QjhE4/600x800"))
         return spots
+    }
+
+    private fun getLocation(): List<String> {
+        // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=22.6278362,%20120.2630863&radius=1500&type=restaurant&key=AIzaSyCLfZQjoR4uuH3-gikZOf01XLltl_bSlPU
+        return listOf("22.6278362","120.2630863")
+    }
+
+    private fun createRestaurants(): List<Restaurant> {
+        val apiResponse = URL("yourUrl").readText()
+
+        val demoPhotos: List<String> = listOf("https://source.unsplash.com/Xq1ntWruZQI/600x800",
+            "https://source.unsplash.com/NYyCqdBOKwc/600x800", "https://source.unsplash.com/buF62ewDLcQ/600x800",
+            "https://source.unsplash.com/THozNzxEP3g/600x800", "https://source.unsplash.com/PeFk7fzxTdk/600x800",
+            "https://source.unsplash.com/LrMWHKqilUw/600x800", "https://source.unsplash.com/HN-5Z6AmxrM/600x800",
+            "https://source.unsplash.com/CdVAUADdqEc/600x800", "https://source.unsplash.com/AWh9C-QjhE4/600x800")
+
+        val restaurants = ArrayList<Restaurant>()
+
+        val objMySearch = JSONObject(apiResponse)
+        val arrRestaurants: JSONArray = objMySearch.getJSONArray("Countries")
+        for (i in 0 until arrRestaurants.length()) {
+            val objRestaurant: JSONObject = arrRestaurants.getJSONObject(i)
+            val placeID: String = objRestaurant.getString("place_id")
+            val name: String = objRestaurant.getString("name")
+            val rating: String = objRestaurant.getString("rating")
+            val totalRatings: String = objRestaurant.getString("user_ratings_total")
+
+//            val photos: JSONArray = obj_restaurant.getJSONArray("photos")
+//            val photo: String = photos.getJSONObject(0).getString("photo_reference")
+
+            val openingHours: JSONObject = objRestaurant.getJSONObject("opening_hours")
+            val opening: Boolean = openingHours.getBoolean("open_now")
+
+            if (!opening) continue
+
+            restaurants.add(Restaurant(placeID = placeID, name = name, rating = rating, totalRatings = totalRatings, photo = demoPhotos[i % 9]))
+            Log.d("GoogleApi", restaurants[i].name)
+        }
+
+        return restaurants
     }
 
 }

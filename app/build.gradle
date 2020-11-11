@@ -4,14 +4,25 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.example.choosedinner"
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 30
     }
 
+}
+
+android {
+    buildTypes {
+        release {
+        }
+        debug {
+            //資源類型為 string，名稱為 API_KEY，值為 GoogleMapKey
+            resValue ("string", "API_KEY", GoogleMapKey)
+        }
+    }
 }
 
 dependencies {

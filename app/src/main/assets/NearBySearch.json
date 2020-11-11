@@ -1,0 +1,928 @@
+{
+  "html_attributions" : [],
+  "next_page_token" : "ATtYBwIcMDqs59shhh71nH_XLGoPm-Zh3GpubKwEGz6vyhf2oomEusHhSWiECq4J56vwT1ZmJilbuBrMqm0wc3H_m_Q4gdUORj5T3x85m60Z_gVjS7Tmp79PJHMpsnQK5OVWrOQbGQECi5BwdIuM1n8kPMc0aXIQ6MWmeCDDI39B392lWFC0c4xDkZdpK_WXBGKASllSg-tPE1-p6mtR7EbPbZeJBmkR0yNtp4VS0OQih4TvYFcfQl4u2eF3Velnp00Z4GNsw_p102rWfd8sjGGX61jiGOJrB_Ve5uYcwWGHKV8-gn79PneRNcJAJzf72Gku82eU59dJafkxHXy20vpruGNc9RRt3onJEJFO-iltCZtY3gZzc_uDEVYN9oKETxcV9-jv0-aMDQKnVUaBRlrS-GREdDVMXn_-0cpEXHlkoxGEa-Iu57f_IIjbUHZWpz5L36iAuD4YwiLrg0kHCAdwQsaRQctBrZHo9senZpoF6X-XQloCuNA77TwOjCufh9lInSCN0KZ3ogYXmBYdMROKp99r9yZyzkw_6L0uuANDNNS-nlS0jgsW2pV5c4VmJd3CjXBscF1PGycwc3ODvxk4UsJs9GpR_I4dCOJWhIpVxsr_EZgtpve6sU8jIRd-LzWEmgBbOFqjIfUrihT9P8vWQIZSemg1qesHdoh1rzlN-xcNkbhvQwTndKInRrRogmAjqnkp7uhpY1nZM8MJB-d4OdBCG92mOWPVdnhSJT2GQEkdhkod4WyK1aiCimbTkCTivry_KiBbJZs1ItKP2JoXYw",
+  "results" : [
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6248657,
+          "lng" : 120.2647766
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6262148802915,
+            "lng" : 120.2662185802915
+          },
+          "southwest" : {
+            "lat" : 22.6235169197085,
+            "lng" : 120.2635206197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+      "name" : "西子灣沙灘會館",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 3024,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/113866071090847754679\"\u003e織田博行\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAA5Xncg1ltsO1I1kzv0UIHuanhsv4Ts4iVfdLaK9dPJXuWPsYYKcLddyyqiVNxLKnsAtQbAPR14QfJM8JKrrB0hyCPE7NriWBwwOOnS8iyvKdiuo3HwHPeuOGqkrU_yQhSEhAYl3RrRzczeScHKodxu_HxGhSlK_bk9jTNwaPN-_r03WhRwtQFnA",
+          "width" : 4032
+        }
+      ],
+      "place_id" : "ChIJqyEZOQgEbjQR8luYgIWfB6I",
+      "plus_code" : {
+        "compound_code" : "J7F7+WW 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7F7+WW"
+      },
+      "rating" : 4.2,
+      "reference" : "ChIJqyEZOQgEbjQR8luYgIWfB6I",
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 1109,
+      "vicinity" : "鼓山區蓮海路51號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.622444,
+          "lng" : 120.270535
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6237534802915,
+            "lng" : 120.2719476302915
+          },
+          "southwest" : {
+            "lat" : 22.6210555197085,
+            "lng" : 120.2692496697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "阿木的店 貝果",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 3024,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/106030153950109831709\"\u003eDebby Lin\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAnHEQ7IvwzaeGns5y7ybj8s_B2cjOlAkpc15kVkZXPKJSsg4YWndh59LqLzRyiM3b502Z405q-cvzX8JIAK0_SYVk_qLmUDWv2N2AGfjhiT1O05tbzTiRnwRuGchyZPP2EhDg6T3SOsh7TgXdquWvVaBaGhQGjRkyhGeIirLgCs5CVMpp4kFO0Q",
+          "width" : 4032
+        }
+      ],
+      "place_id" : "ChIJE0hJdgoEbjQRyrkRPyLbOOI",
+      "plus_code" : {
+        "compound_code" : "J7CC+X6 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CC+X6"
+      },
+      "price_level" : 1,
+      "rating" : 4.3,
+      "reference" : "ChIJE0hJdgoEbjQRyrkRPyLbOOI",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 153,
+      "vicinity" : "鼓山區長安街11號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6231017,
+          "lng" : 120.2700838
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6244440302915,
+            "lng" : 120.2713644302915
+          },
+          "southwest" : {
+            "lat" : 22.6217460697085,
+            "lng" : 120.2686664697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "阪城海鮮料理 # 駁二特區附近美食",
+      "opening_hours" : {
+        "open_now" : false
+      },
+      "photos" : [
+        {
+          "height" : 4192,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/108397365399345277637\"\u003e阪城海鮮料理 # 駁二特區附近美食\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAAYFzt28aeo7uYmxeSiTpAk0Vk1Xis1Xo_HwR4WsDwzaTbmKwXx8opNjDYLJlac-FqN8FIDjC0XTFwgXHUigPb4NSoSdRGDuu_9JctJ_MPXQTx2fpy8k7JY1FYK9LdWR-EhAo9QfzWhSREKHEdGmnBookGhSWMRh8eB6lb4dQauk9RBPqj4aRAg",
+          "width" : 3144
+        }
+      ],
+      "place_id" : "ChIJfdNrbQoEbjQRiWsbvzndUU8",
+      "plus_code" : {
+        "compound_code" : "J7FC+62 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7FC+62"
+      },
+      "price_level" : 2,
+      "rating" : 4.5,
+      "reference" : "ChIJfdNrbQoEbjQRiWsbvzndUU8",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 641,
+      "vicinity" : "鼓山區濱海二路25號1樓"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6198306,
+          "lng" : 120.2725482
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6212331802915,
+            "lng" : 120.2738900802915
+          },
+          "southwest" : {
+            "lat" : 22.6185352197085,
+            "lng" : 120.2711921197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "羅師傅麵食館",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 1080,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/116254343483019121107\"\u003e劉毛頭\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAJzwXPmEqLdt-h6X2URRh075U--OXKZ3gxDZJHMFRzZzkGeVd0MDG_YOUXX3-FOCLXq8KrKLG2GPpCAmqRI9m4T9azocI_U2bIYc9yFeYAgK0ReTCUWGIfyFgrNUZTtCVEhBIz0gMaMYG1oFyL8cCtNrkGhTR5Lb4swwJbPb1hl4taebsAGVm6g",
+          "width" : 1920
+        }
+      ],
+      "place_id" : "ChIJ99-NGfUDbjQR7BLh4-8jXz0",
+      "plus_code" : {
+        "compound_code" : "J79F+W2 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J79F+W2"
+      },
+      "price_level" : 1,
+      "rating" : 4,
+      "reference" : "ChIJ99-NGfUDbjQR7BLh4-8jXz0",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 719,
+      "vicinity" : "鼓山區濱海一路25號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.619954,
+          "lng" : 120.27113
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.62121713029151,
+            "lng" : 120.2724875802915
+          },
+          "southwest" : {
+            "lat" : 22.6185191697085,
+            "lng" : 120.2697896197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "九日平價日式串燒",
+      "opening_hours" : {
+        "open_now" : false
+      },
+      "photos" : [
+        {
+          "height" : 5120,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/103559314833173876216\"\u003eHsieh Tsan-Hung\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAvvJHUmO3Z_crAFmfkr7EKYHjgf3VT0kKmu8h3RdZcPO7DvrLIFtbhob8VPIN1vtk2p86gWoze6_5udOxqqJLjIFlwImWF8mGfcMXfJR-bjjzdZjmm44Sim9WZ7B9DdBfEhBlt1pLG9X_z1NVvSDxTEjhGhQuMd_ORVV-Ux_ZVXpusscitIhvYw",
+          "width" : 3840
+        }
+      ],
+      "place_id" : "ChIJvx02qfUDbjQRAXPeZtYLSdY",
+      "plus_code" : {
+        "compound_code" : "J79C+XF 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J79C+XF"
+      },
+      "price_level" : 2,
+      "rating" : 4.3,
+      "reference" : "ChIJvx02qfUDbjQRAXPeZtYLSdY",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 186,
+      "vicinity" : "鼓山區濱海一路72號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6239631,
+          "lng" : 120.2705292
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6252720802915,
+            "lng" : 120.2718509802915
+          },
+          "southwest" : {
+            "lat" : 22.6225741197085,
+            "lng" : 120.2691530197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "晨間廚房",
+      "opening_hours" : {
+        "open_now" : false
+      },
+      "photos" : [
+        {
+          "height" : 2340,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/111097092353003450034\"\u003e林冠廷\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRZAAAAE2Cm-UFBAf2387gFJ0beXb-dw8SaP119-R94xnd4Nm2tAhqsYluqtne3I_a7EiXfgUkLPuMeUfeKk6LAPCqpmwJ3ZNeXEcleMfm9RFGxHbg7mkDh6J7egLvVK6mDGd_rEhBbIEb8Uxo-Hkd_qhVXSWEwGhT36kycEMvIAcDW-l-LTBe8uMuSGg",
+          "width" : 4160
+        }
+      ],
+      "place_id" : "ChIJZ9N6QwoEbjQR68i2EibZ6yk",
+      "plus_code" : {
+        "compound_code" : "J7FC+H6 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7FC+H6"
+      },
+      "price_level" : 1,
+      "rating" : 3.7,
+      "reference" : "ChIJZ9N6QwoEbjQR68i2EibZ6yk",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 176,
+      "vicinity" : "鼓山區臨海二路54號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6215468,
+          "lng" : 120.2721643
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6229016302915,
+            "lng" : 120.2735170302915
+          },
+          "southwest" : {
+            "lat" : 22.62020366970849,
+            "lng" : 120.2708190697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "迪波波藝食館 Deep Purple",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 3024,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/117933079272231918677\"\u003e迪波波藝食館 Deep Purple\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAA4WEtsFkGngv0bBgMPaWvU4i6adBKkzRESfjkIdxUHRvX8QzqFq2h3Jw-_KywGHsn7th1d0YS9B6O169Y_hj7Zd5A0dDi9NjFly6AlAWHHISUkPNiCwBF5RfLEnYucEmtEhBZEAsFl0cWvpIDZI0VqoWhGhRdlkCr-u1ISQkFHdd7pSElP5oeiQ",
+          "width" : 4032
+        }
+      ],
+      "place_id" : "ChIJ_R_BVHkEbjQRwQHchG1I_LA",
+      "plus_code" : {
+        "compound_code" : "J7CC+JV 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CC+JV"
+      },
+      "price_level" : 2,
+      "rating" : 4.2,
+      "reference" : "ChIJ_R_BVHkEbjQRwQHchG1I_LA",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 272,
+      "vicinity" : "鼓山區鼓元街57號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6223566,
+          "lng" : 120.2733317
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6236631802915,
+            "lng" : 120.2746531802915
+          },
+          "southwest" : {
+            "lat" : 22.6209652197085,
+            "lng" : 120.2719552197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "丹丹漢堡 西子灣店",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 2368,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/112898427754420422104\"\u003eEric Chang\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAI9j8zBObcOGNbpubm__-4uatJ-aFFoTIMo6ULECGYF5_60mI_acc_4uooxsST15JPN2Ytf61bjdFrCI2vpqH_zfFuhzKzd7hrhEiLh37j8STrBrtkmpJuTaut_UxScZVEhBUYvS-kp--6rgAKu1YevpQGhRr7dZSeW4a13CY7IMmdx96-yR2vw",
+          "width" : 4208
+        }
+      ],
+      "place_id" : "ChIJAcqWpAoEbjQRgukcMVy2IX0",
+      "plus_code" : {
+        "compound_code" : "J7CF+W8 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CF+W8"
+      },
+      "price_level" : 1,
+      "rating" : 4.2,
+      "reference" : "ChIJAcqWpAoEbjQRgukcMVy2IX0",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 4003,
+      "vicinity" : "鼓山區臨海二路24號高雄捷運西子灣站"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6209107,
+          "lng" : 120.2745719
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6222161302915,
+            "lng" : 120.2759873302915
+          },
+          "southwest" : {
+            "lat" : 22.6195181697085,
+            "lng" : 120.2732893697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "Le Bon Marché 好市集手作料理餐廳",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 1158,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/113321587965800593223\"\u003eLe Bon Marché 好市集手作料理餐廳\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAFIBhlnvFCZjF_q-QC4VqbQtyAt-cFJx7zZMqR2PR5SlCQSr8bSZzT7rYc0lZ4HjQIuJDhhKhZiKH7ZP7f54DUwkV81FJNo-ZChBNs1LIb1khh6QhBE7hzzZN993HfSLSEhDwWSvmbrO8um0IP3zR5ZuEGhRXfguhEqdo7xPFLxcnpUz5BcaqFg",
+          "width" : 2048
+        }
+      ],
+      "place_id" : "ChIJQ4merYoDbjQRTB7LRT8m-Kg",
+      "plus_code" : {
+        "compound_code" : "J7CF+9R 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CF+9R"
+      },
+      "price_level" : 3,
+      "rating" : 4.5,
+      "reference" : "ChIJQ4merYoDbjQRTB7LRT8m-Kg",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 619,
+      "vicinity" : "鼓山區鼓山一路19號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6182226,
+          "lng" : 120.2665073
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6195207802915,
+            "lng" : 120.2677682302915
+          },
+          "southwest" : {
+            "lat" : 22.6168228197085,
+            "lng" : 120.2650702697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "貝殼情人",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 3024,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/101730642821312963972\"\u003e貝殼情人\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAKof46y5zjGaXG2VyY7f4Svci4dquPfzuvtwEWBcMLI3D3gAPZE5DJAgq6TwtyVR7xl_FWtR46RUUALI2K19q3tZJE07nTTFfV3okGAmFLECX6UyagFbxhZ9FVDyaibTmEhCc-Wa6MntWbwp1B67ehaYUGhQ804hfrrlYmCK1epHOq_tAiQ24bA",
+          "width" : 4032
+        }
+      ],
+      "place_id" : "ChIJRdjFzPYDbjQRG1Xk0B4XLao",
+      "plus_code" : {
+        "compound_code" : "J798+7J 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J798+7J"
+      },
+      "price_level" : 2,
+      "rating" : 4.4,
+      "reference" : "ChIJRdjFzPYDbjQRG1Xk0B4XLao",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "store", "establishment" ],
+      "user_ratings_total" : 174,
+      "vicinity" : "鼓山區蓮海路18-1號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6201165,
+          "lng" : 120.2727621
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6214279802915,
+            "lng" : 120.2741578302915
+          },
+          "southwest" : {
+            "lat" : 22.6187300197085,
+            "lng" : 120.2714598697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+      "name" : "萬全肉圓-鼓山店",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 3024,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/114303061093246820810\"\u003eyunn yunn\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAhQSMkup4dlrgR0TPPdw9h3yjIxstKtfjHRcn2oz6U3mXYT2CcjJ-QyXpBCLlWtyCAiJsNpV5MuRJRABdICifJwSLiiMLGeMhnvgYtSlFC7ZH7ojDWcSfS08zuZ3mkEKpEhDBRn1c7IJTBEonhKYfy8QGGhQ4xsYuVUCMK9RkmA9oox5lH6r-gw",
+          "width" : 4032
+        }
+      ],
+      "place_id" : "ChIJYylaFvUDbjQRs6KCcO1c6eM",
+      "plus_code" : {
+        "compound_code" : "J7CF+24 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CF+24"
+      },
+      "price_level" : 1,
+      "rating" : 4.2,
+      "reference" : "ChIJYylaFvUDbjQRs6KCcO1c6eM",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "store", "establishment" ],
+      "user_ratings_total" : 651,
+      "vicinity" : "鼓山區臨海一路1號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.619634,
+          "lng" : 120.271816
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6210916802915,
+            "lng" : 120.2731443802915
+          },
+          "southwest" : {
+            "lat" : 22.6183937197085,
+            "lng" : 120.2704464197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "朝月冷麵王韓式料理",
+      "opening_hours" : {
+        "open_now" : false
+      },
+      "photos" : [
+        {
+          "height" : 809,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/106030153950109831709\"\u003eDebby Lin\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAQizd-C1tTv2mwITPbOeLfqjQ3NnoU4vYwFf1iWWG5kPFNaWrt4al72V2h95VAEHFXRMGG24o34MQpP4hskBWreiAHaXRTjGN_KUrXCtkYFpB-lcvPI5wxhmu9atTYsN9EhADOGMFMHet1jGGF_aqS4BmGhSMvWDcUPGVAFfX2Tqnjz42T3hNwA",
+          "width" : 1080
+        }
+      ],
+      "place_id" : "ChIJY1JgAfUDbjQR6j4frP-RznU",
+      "plus_code" : {
+        "compound_code" : "J79C+VP 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J79C+VP"
+      },
+      "price_level" : 2,
+      "rating" : 4.1,
+      "reference" : "ChIJY1JgAfUDbjQR6j4frP-RznU",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 758,
+      "vicinity" : "鼓山區濱海一路57號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6224663,
+          "lng" : 120.27144
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6237742302915,
+            "lng" : 120.2728671302915
+          },
+          "southwest" : {
+            "lat" : 22.6210762697085,
+            "lng" : 120.2701691697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "哈瑪星汕頭麵",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 2112,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/102486709069372598289\"\u003e紅龍\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAADK-PaKDW87qilEg38srujZl5ycE9HayHrD576ua7l5Vz8gLW1Xw5NBK86xgQ7e9FahDD7qpJLM75lj-7jWA2bKb07G8LAWs_1o7v-qYQLbnhxHjUwfRO1dh21pzugktwEhBjqT_FWhWEn1Is4BlmLMhkGhTQgVlyfrCDXDnvM6tZt1XjZeY7XA",
+          "width" : 2816
+        }
+      ],
+      "place_id" : "ChIJ2zQFfgoEbjQRoRUBiRyDZbA",
+      "plus_code" : {
+        "compound_code" : "J7CC+XH 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CC+XH"
+      },
+      "rating" : 3.9,
+      "reference" : "ChIJ2zQFfgoEbjQRoRUBiRyDZbA",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 338,
+      "vicinity" : "鼓山區鼓波街27-16號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6199606,
+          "lng" : 120.2713304
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6212290302915,
+            "lng" : 120.2726879802915
+          },
+          "southwest" : {
+            "lat" : 22.6185310697085,
+            "lng" : 120.2699900197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "阿珠的店",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 4032,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/117161347931154663216\"\u003eHoar\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRZAAAAD8UvcEE0_5s9wj3pjb5NAiWFhAojCvgBNI_32wj_4PThPq5u_8rL6TRBxuRQWSRLcf44G5UeeAHcIMT1w9pdoV85IfWHef_J6nZCDSf_bHfstFJFI6Oevf57-Y99O25NEhAxmNP5k6KNxTbLfEVXSXl3GhTeASrAJZR6cZHGiesCHQkSNIchFQ",
+          "width" : 3024
+        }
+      ],
+      "place_id" : "ChIJ03-QzDgEbjQRjPCcgVeWtoQ",
+      "plus_code" : {
+        "compound_code" : "J79C+XG 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J79C+XG"
+      },
+      "price_level" : 1,
+      "rating" : 4.3,
+      "reference" : "ChIJ03-QzDgEbjQRjPCcgVeWtoQ",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 235,
+      "vicinity" : "鼓山區濱海一路64號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6219139,
+          "lng" : 120.271125
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6232285802915,
+            "lng" : 120.2725342302915
+          },
+          "southwest" : {
+            "lat" : 22.6205306197085,
+            "lng" : 120.2698362697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "順和排骨大王",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 3024,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/109066395634453076784\"\u003eJOSS\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAIBHp5_ToDQb_qQ4wYv0tnFFT1lY3VunGv2KPgR9SJFUTCZaR1T47XfQx8i34pjTYjQooGw8dDM0D6R7GfzMCOs7pCfdf6OWPjJ9VtWVHfKUWVE9MDaermqM_q1oOnC2-EhAmbl9f8lTY7t4K0uFAReb5GhRcP32heKmhfzdvBekf7XJvXTpdmQ",
+          "width" : 4032
+        }
+      ],
+      "place_id" : "ChIJhQsVhPUDbjQRbkSX6Viarzc",
+      "plus_code" : {
+        "compound_code" : "J7CC+QC 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CC+QC"
+      },
+      "price_level" : 1,
+      "rating" : 4.1,
+      "reference" : "ChIJhQsVhPUDbjQRbkSX6Viarzc",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 741,
+      "vicinity" : "鼓山區鼓波街19-3號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.620933,
+          "lng" : 120.2748247
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6222792302915,
+            "lng" : 120.2761777802915
+          },
+          "southwest" : {
+            "lat" : 22.6195812697085,
+            "lng" : 120.2734798197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "元氣早餐店",
+      "opening_hours" : {
+        "open_now" : false
+      },
+      "photos" : [
+        {
+          "height" : 3024,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/106231669315207920607\"\u003eYun Xin\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAV28ZUvHCee3-OtV0qOxnxefU8gTnJRZH697jjxnz_x_DJ_EzRX9kHCJJj6bzUQ6E68Lll6i6LrA-re9rkryNmoMVIVkt5pvTajAgGg9abaUQGW8j2vIfYrVDyqU_ldB-EhD2u3UqNQaWhgEKzvJDFXUcGhQ-wrw43IYqUUzz84B-0AogLCnIjg",
+          "width" : 4032
+        }
+      ],
+      "place_id" : "ChIJe2qlr4oDbjQRPB0OWB5wxLc",
+      "plus_code" : {
+        "compound_code" : "J7CF+9W 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CF+9W"
+      },
+      "price_level" : 1,
+      "rating" : 4.2,
+      "reference" : "ChIJe2qlr4oDbjQRPB0OWB5wxLc",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 85,
+      "vicinity" : "鼓山區鼓山一路24之1號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.624875,
+          "lng" : 120.264777
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6262241802915,
+            "lng" : 120.2662187802915
+          },
+          "southwest" : {
+            "lat" : 22.6235262197085,
+            "lng" : 120.2635208197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/school-71.png",
+      "name" : "西子灣沙灘會館餐廳",
+      "photos" : [
+        {
+          "height" : 960,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/103437572300024804776\"\u003e月光下的影舞者moonlite dancer\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAA__8e3ApCs7sElB1AmWYwKRJ5bza3zwZPfoDz0qXxQz5E9ltCSkN5w-8IIlxpRFYjhlPM7VXOMAcOgvlDR7MdTtvMRHnYvZfobn9Z8vc07lTTBPPBFgXMQJkVytVSoVN-EhDbnbLf4d4s9Mu2V8jG3g6QGhQnY5M3Gc9-JlbMMp1lmNYCwdfanw",
+          "width" : 1280
+        }
+      ],
+      "place_id" : "ChIJb-eBOAgEbjQRc6OI-tvKUb0",
+      "plus_code" : {
+        "compound_code" : "J7F7+XW 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7F7+XW"
+      },
+      "rating" : 4.2,
+      "reference" : "ChIJb-eBOAgEbjQRc6OI-tvKUb0",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 19,
+      "vicinity" : "鼓山區蓮海路51號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6284352,
+          "lng" : 120.2647564
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6296614302915,
+            "lng" : 120.2660185302915
+          },
+          "southwest" : {
+            "lat" : 22.62696346970849,
+            "lng" : 120.2633205697085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "73階蔬食咖啡",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 1153,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/116640687085290986082\"\u003e73階蔬食咖啡\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAbKeWG4mipvkBM0oiTunMY2Hb0lU3hupt-eYIyKAEpfXFYFGZEqJPnGf31YapRiqIeoV-aq3aDOSs-b7KECwXUv0vZ1rAd5e1Qh7zXWD-vvEB_-jGfvFkD4Z1W--BJL0dEhCN0UxkzPQqCj_V2EqYd1s7GhRKgAGqTn7nmYGXDhQoYt6eRbAcfw",
+          "width" : 2048
+        }
+      ],
+      "place_id" : "ChIJdw_gQQkEbjQRYfPYkQKi5Yo",
+      "plus_code" : {
+        "compound_code" : "J7H7+9W 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7H7+9W"
+      },
+      "price_level" : 2,
+      "rating" : 4.4,
+      "reference" : "ChIJdw_gQQkEbjQRYfPYkQKi5Yo",
+      "scope" : "GOOGLE",
+      "types" : [
+        "bakery",
+        "cafe",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "user_ratings_total" : 282,
+      "vicinity" : "鼓山區蓮海路70號中山大學學生活動中心3樓"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6240658,
+          "lng" : 120.2692679
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6254038802915,
+            "lng" : 120.2706621802915
+          },
+          "southwest" : {
+            "lat" : 22.62270591970849,
+            "lng" : 120.2679642197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "緣味廚房",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 3000,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/100294864576420576151\"\u003eCiao Ru Huang\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAAIESDRIIKn3wOUVwFuBdzCUHYotpqrXQ8SGF9Q4fHq38XnwzvmBp_eldVS13CVNycfzD0d-DYX2MjLPltxkkpdXTNEoRyJSWoRlUSwaCBacnRf6ztKBDET-rKzZXhFHZsEhAsz_ZSwk7meErL9D6quEI6GhRuk2OQU80AVRJBw4MZ50pq09EoTg",
+          "width" : 4000
+        }
+      ],
+      "place_id" : "ChIJYcnNGQoEbjQRzChPgp-AxzU",
+      "plus_code" : {
+        "compound_code" : "J7F9+JP 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7F9+JP"
+      },
+      "price_level" : 1,
+      "rating" : 4.2,
+      "reference" : "ChIJYcnNGQoEbjQRzChPgp-AxzU",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 108,
+      "vicinity" : "鼓山區哨船街89-1號"
+    },
+    {
+      "business_status" : "OPERATIONAL",
+      "geometry" : {
+        "location" : {
+          "lat" : 22.6224363,
+          "lng" : 120.270947
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 22.6237322802915,
+            "lng" : 120.2722597802915
+          },
+          "southwest" : {
+            "lat" : 22.6210343197085,
+            "lng" : 120.2695618197085
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "name" : "珍好吃滷味",
+      "opening_hours" : {
+        "open_now" : true
+      },
+      "photos" : [
+        {
+          "height" : 2096,
+          "html_attributions" : [
+            "\u003ca href=\"https://maps.google.com/maps/contrib/109920154722578128090\"\u003e2015 dingyi\u003c/a\u003e"
+          ],
+          "photo_reference" : "CmRaAAAApwwwSYipVxhS9aRqpKNorgy5s2I98GjIDOmP5u3RIkkBqFpydUdhpT5rgE26mIooewQqv22VIuVn9SW7ovExKLCWY7nEzsw8lSX8MnYdyMhFRNbNprIDY9gnw8zXdUQ4EhAgYebMDpt5U24GFjiINUzqGhS-Y5fshGvgbB-p6RLMPKRv5Byb1w",
+          "width" : 3149
+        }
+      ],
+      "place_id" : "ChIJ39YDeQoEbjQRdGW4CaaSXV4",
+      "plus_code" : {
+        "compound_code" : "J7CC+X9 台灣高雄市鼓山區",
+        "global_code" : "7QJ2J7CC+X9"
+      },
+      "rating" : 4.2,
+      "reference" : "ChIJ39YDeQoEbjQRdGW4CaaSXV4",
+      "scope" : "GOOGLE",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+      "user_ratings_total" : 60,
+      "vicinity" : "鼓山區鼓元街106號"
+    }
+  ],
+  "status" : "OK"
+}
