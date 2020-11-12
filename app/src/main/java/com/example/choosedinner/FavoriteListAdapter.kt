@@ -9,9 +9,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class RestaurantCardStackAdapter(
+class FavoriteListAdapter(
     private var restaurants: List<Restaurant> = emptyList()
-) : RecyclerView.Adapter<RestaurantCardStackAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<FavoriteListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)

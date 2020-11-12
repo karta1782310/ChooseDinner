@@ -3,9 +3,7 @@ package com.example.choosedinner
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
-import android.os.Build
 import android.os.Bundle
-import android.os.StrictMode
 import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -24,9 +22,8 @@ import com.yuyakaido.android.cardstackview.*
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONArray
-import org.json.JSONException
 import org.json.JSONObject
-import java.io.IOException
+import java.lang.Thread.sleep
 import java.util.*
 
 
@@ -35,8 +32,9 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
     private val drawerLayout by lazy { findViewById<DrawerLayout>(R.id.drawer_layout) }
     private val cardStackView by lazy { findViewById<CardStackView>(R.id.card_stack_view) }
     private val manager by lazy { CardStackLayoutManager(this, this) }
-    private val adapter by lazy { RestaurantCardStackAdapter(createRestaurants()) }
+    private val adapter by lazy { CardStackAdapter(createRestaurants()) }
 
+    private var myJson: String? = null
     private var myLocation: String? = null
     private var locationManager : LocationManager? = null
     private val demoPhotos: List<String> = listOf(
@@ -53,6 +51,8 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Thread(BackgroundFetcher()).start()
+
         getLocation()
         setContentView(R.layout.activity_cardstack)
         setupNavigation()
@@ -131,10 +131,10 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
     }
 
     private fun setupCardStackView() {
-        if (Build.VERSION.SDK_INT > 9) {
-            val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
-            StrictMode.setThreadPolicy(policy)
-        }
+//        if (Build.VERSION.SDK_INT > 9) {
+//            val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+//            StrictMode.setThreadPolicy(policy)
+//        }
 
         initialize()
     }
@@ -332,23 +332,29 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
         locationManager = getSystemService(LOCATION_SERVICE) as LocationManager?
         try {
             // Request location updates
-            locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
+            locationManager?.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER,
+                0L,
+                0f,
+                locationListener
+            )
             Log.d("getLocation", myLocation.toString())
-        } catch(ex: SecurityException) {
+        } catch (ex: SecurityException) {
             Log.d("myTag", "Security Exception, no location available")
         }
-
-        // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=22.6278362,%20120.2630863&radius=1500&type=restaurant&key=AIzaSyCLfZQjoR4uuH3-gikZOf01XLltl_bSlPU
     }
 
     private fun createRestaurants(): List<Restaurant> {
 //        val apiResponse = URL("https://github.com/karta1782310/ChooseDinner/blob/master/app/src/main/assets/NearBySearch.json").readText()
-        val url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=22.6278362,%20120.2630863&radius=1500&type=restaurant&key=AIzaSyCLfZQjoR4uuH3-gikZOf01XLltl_bSlPU"
-        val apiResponse = getJson(url)
+
+        while (myJson == null) {
+            sleep(1000)
+            Log.d("sleep", "Waiting for json.")
+        }
 
         val restaurants = ArrayList<Restaurant>()
 
-        val objMySearch = JSONObject(apiResponse)
+        val objMySearch = JSONObject(myJson)
         val arrRestaurants: JSONArray = objMySearch.getJSONArray("results")
         for (i in 0 until arrRestaurants.length()) {
             val objRestaurant: JSONObject = arrRestaurants.getJSONObject(i)
@@ -357,8 +363,9 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
             val rating: String = objRestaurant.getString("rating")
             val totalRatings: String = objRestaurant.getString("user_ratings_total")
 
-//            val photos: JSONArray = obj_restaurant.getJSONArray("photos")
-//            val photo: String = photos.getJSONObject(0).getString("photo_reference")
+            val photos: JSONArray = objRestaurant.getJSONArray("photos")
+            val photo: String = photos.getJSONObject(0).getString("photo_reference")
+            val photo_url = "https://maps.googleapis.com/maps/api/place/photo?key=${BuildConfig.API_KEY}&photoreference=${photo}&maxheight=800&maxwidth=600"
 
 //            try {
 //                val openingHours: JSONObject = objRestaurant.getJSONObject("opening_hours")
@@ -374,7 +381,7 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
                     name = name,
                     rating = rating,
                     totalRatings = totalRatings,
-                    photo = demoPhotos[i % 9]
+                    photo = photo_url //demoPhotos[i % 9]
                 )
             )
             Log.d("GoogleApi", restaurants[restaurants.size - 1].name)
@@ -382,19 +389,18 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
         return restaurants
     }
 
-    private fun getJson(url: String): String {
-        var result = ""
-        val okhttp = OkHttpClient.Builder().build()
+    private fun getJson(url: String) : String?  {  // (2)
+        val client = OkHttpClient.Builder().build()
         val request = Request.Builder().url(url).build()
+        val response = client.newCall(request).execute()
+        return response.body?.string()
+    }
 
-        try {
-            val response = okhttp.newCall(request).execute()
-            result = response.body?.string().toString()
-        } catch (e: IOException) {
-            e.printStackTrace()
+    inner class BackgroundFetcher : Runnable {
+        override fun run() {  // (3)
+            val url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=22.6278362,%20120.2630863&radius=1500&type=restaurant&key=${BuildConfig.API_KEY}"
+            myJson = getJson(url)
         }
-
-        return result
     }
 
 
