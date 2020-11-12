@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.choosedinner"
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 30
     }
 
@@ -44,4 +44,7 @@ dependencies {
 
     // View
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // json url
+    implementation 'com.squareup.okhttp3:okhttp:4.8.0'
 }

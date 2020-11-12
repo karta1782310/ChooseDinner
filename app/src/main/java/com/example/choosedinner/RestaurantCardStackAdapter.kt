@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 class RestaurantCardStackAdapter(
-    private var Restaurants: List<Restaurant> = emptyList()
+    private var restaurants: List<Restaurant> = emptyList()
 ) : RecyclerView.Adapter<RestaurantCardStackAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -19,27 +19,27 @@ class RestaurantCardStackAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val Restaurant = Restaurants[position]
-        holder.name.text = "${Restaurant.id}. ${Restaurant.name}"
-        holder.rating.text = "Rating:${Restaurant.rating}. Total:${Restaurant.totalRatings}"
+        val restaurant = restaurants[position]
+        holder.name.text = "${restaurant.id}. ${restaurant.name}"
+        holder.rating.text = "Rating:${restaurant.rating}. Total:${restaurant.totalRatings}"
         Glide.with(holder.image)
-            .load(Restaurant.photo)
+            .load(restaurant.photo)
             .into(holder.image)
         holder.itemView.setOnClickListener { v ->
-            Toast.makeText(v.context, Restaurant.name, Toast.LENGTH_SHORT).show()
+            Toast.makeText(v.context, restaurant.name, Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun getItemCount(): Int {
-        return Restaurants.size
+        return restaurants.size
     }
 
-    fun setRestaurants(Restaurants: List<Restaurant>) {
-        this.Restaurants = Restaurants
+    fun setRestaurants(restaurants: List<Restaurant>) {
+        this.restaurants = restaurants
     }
 
     fun getRestaurants(): List<Restaurant> {
-        return Restaurants
+        return restaurants
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
