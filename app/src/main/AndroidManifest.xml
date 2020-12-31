@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CardStackActivity"></activity>
+        <activity android:name=".FavoritesActivity"></activity>
     </application>
 
 </manifest>

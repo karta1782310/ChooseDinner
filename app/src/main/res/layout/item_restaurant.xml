@@ -86,4 +86,20 @@
         android:layout_height="match_parent">
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/lat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="0sp" />
+
+    <TextView
+        android:id="@+id/lng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="0sp" />
+
 </androidx.cardview.widget.CardView>

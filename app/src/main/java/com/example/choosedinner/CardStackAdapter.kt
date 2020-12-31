@@ -28,6 +28,9 @@ class CardStackAdapter(
         holder.itemView.setOnClickListener { v ->
             Toast.makeText(v.context, restaurant.name, Toast.LENGTH_SHORT).show()
         }
+
+        holder.lat.text = "${restaurant.lat}"
+        holder.lng.text = "${restaurant.lng}"
     }
 
     override fun getItemCount(): Int {
@@ -46,6 +49,8 @@ class CardStackAdapter(
         val name: TextView = view.findViewById(R.id.item_name)
         var rating: TextView = view.findViewById(R.id.item_rating)
         var image: ImageView = view.findViewById(R.id.item_image)
+        var lat: TextView = view.findViewById(R.id.lat)
+        var lng: TextView = view.findViewById(R.id.lng)
     }
 
 }

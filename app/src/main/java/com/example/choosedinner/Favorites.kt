@@ -1,13 +1,10 @@
 package com.example.choosedinner
 
-data class Favorites(
-    val placeID: String,
+import java.io.Serializable
+
+data class Favorites (
     val name: String,
     val rating: String,
-    val totalRatings: String,
-    val photo: String
-) {
-    companion object {
-        private var counter = 0L
-    }
-}
+    val lat: String,
+    val lng: String
+) : Serializable

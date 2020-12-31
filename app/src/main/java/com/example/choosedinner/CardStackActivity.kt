@@ -1,5 +1,6 @@
 package com.example.choosedinner
 
+import android.content.Intent
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
@@ -22,10 +23,10 @@ import com.yuyakaido.android.cardstackview.*
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
 import java.lang.Thread.sleep
 import java.util.*
-
 
 class CardStackActivity : AppCompatActivity(), CardStackListener {
 
@@ -33,6 +34,9 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
     private val cardStackView by lazy { findViewById<CardStackView>(R.id.card_stack_view) }
     private val manager by lazy { CardStackLayoutManager(this, this) }
     private val adapter by lazy { CardStackAdapter(createRestaurants()) }
+
+    private val myIntent = Intent(this, FavoritesActivity::class.java)
+    private val myBundle = Bundle()
 
     private var myJson: String? = null
     private var myLocation: String? = null
@@ -94,6 +98,13 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
 
     override fun onCardDisappeared(view: View, position: Int) {
         val textView = view.findViewById<TextView>(R.id.item_name)
+        var tmp = Favorites(
+            name =  view.findViewById<TextView>(R.id.item_name).text.toString(),
+            rating = view.findViewById<TextView>(R.id.item_rating).text.toString(),
+            lat =  view.findViewById<TextView>(R.id.lat).text.toString(),
+            lng =  view.findViewById<TextView>(R.id.lng).text.toString()
+        )
+        myIntent.putExtra("Like", tmp)
         Log.d("CardStackView", "onCardDisappeared: ($position) ${textView.text}")
     }
 
@@ -118,12 +129,7 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.reload -> reload()
-//                R.id.add_spot_to_first -> addFirst(1)
-//                R.id.add_spot_to_last -> addLast(1)
-//                R.id.remove_spot_from_first -> removeFirst(1)
-//                R.id.remove_spot_from_last -> removeLast(1)
-//                R.id.replace_first_spot -> replace()
-//                R.id.swap_first_for_last -> swap()
+                R.id.favorite -> gotoFavorite()
             }
             drawerLayout.closeDrawers()
             true
@@ -172,6 +178,7 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
             manager.setSwipeAnimationSetting(setting)
             cardStackView.swipe()
         }
+
     }
 
     private fun initialize() {
@@ -213,23 +220,9 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
         result.dispatchUpdatesTo(adapter)
     }
 
-//    private fun paginate() {
-//        val old = adapter.getSpots()
-//        val new = old.plus(createSpots())
-//        val callback = SpotDiffCallback(old, new)
-//        val result = DiffUtil.calculateDiff(callback)
-//        adapter.setSpots(new)
-//        result.dispatchUpdatesTo(adapter)
-//    }
-//
-//    private fun reload() {
-//        val old = adapter.getSpots()
-//        val new = createSpots()
-//        val callback = SpotDiffCallback(old, new)
-//        val result = DiffUtil.calculateDiff(callback)
-//        adapter.setSpots(new)
-//        result.dispatchUpdatesTo(adapter)
-//    }
+    private fun gotoFavorite() {
+        startActivity(myIntent)
+    }
 
 //    private fun addFirst(size: Int) {
 //        val old = adapter.getSpots()
@@ -293,31 +286,7 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
 //        result.dispatchUpdatesTo(adapter)
 //    }
 //
-//    private fun replace() {
-//        val old = adapter.getSpots()
-//        val new = mutableListOf<Spot>().apply {
-//            addAll(old)
-//            removeAt(manager.topPosition)
-//            add(manager.topPosition, createSpot())
-//        }
-//        adapter.setSpots(new)
-//        adapter.notifyItemChanged(manager.topPosition)
-//    }
-//
-//    private fun swap() {
-//        val old = adapter.getSpots()
-//        val new = mutableListOf<Spot>().apply {
-//            addAll(old)
-//            val first = removeAt(manager.topPosition)
-//            val last = removeAt(this.size - 1)
-//            add(manager.topPosition, last)
-//            add(first)
-//        }
-//        val callback = SpotDiffCallback(old, new)
-//        val result = DiffUtil.calculateDiff(callback)
-//        adapter.setSpots(new)
-//        result.dispatchUpdatesTo(adapter)
-//    }
+
 
     private val locationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
@@ -360,12 +329,34 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
             val objRestaurant: JSONObject = arrRestaurants.getJSONObject(i)
             val placeID: String = objRestaurant.getString("place_id")
             val name: String = objRestaurant.getString("name")
-            val rating: String = objRestaurant.getString("rating")
-            val totalRatings: String = objRestaurant.getString("user_ratings_total")
 
-            val photos: JSONArray = objRestaurant.getJSONArray("photos")
-            val photo: String = photos.getJSONObject(0).getString("photo_reference")
-            val photo_url = "https://maps.googleapis.com/maps/api/place/photo?key=${BuildConfig.API_KEY}&photoreference=${photo}&maxheight=800&maxwidth=600"
+            val objGeometry = objRestaurant.getJSONObject("geometry")
+            val objLoc = objGeometry.getJSONObject("location")
+            val lat = objLoc.getString("lat")
+            val lng = objLoc.getString("lng")
+
+            var rating = "null"
+            var totalRatings = "null"
+            var photo_url = "https://source.unsplash.com/Xq1ntWruZQI/600x800"
+
+            try {
+                rating = objRestaurant.getString("rating")
+            } catch (e: JSONException) {
+                Log.d("Json", e.toString())
+            }
+            try {
+                totalRatings = objRestaurant.getString("user_ratings_total")
+            } catch (e: JSONException) {
+                Log.d("Json", e.toString())
+            }
+            try {
+                val photos: JSONArray = objRestaurant.getJSONArray("photos")
+                val photo: String = photos.getJSONObject(0).getString("photo_reference")
+                photo_url =
+                    "https://maps.googleapis.com/maps/api/place/photo?key=${BuildConfig.API_KEY}&photoreference=${photo}&maxheight=800&maxwidth=600"
+            } catch (e: JSONException) {
+                Log.d("Json", e.toString())
+            }
 
 //            try {
 //                val openingHours: JSONObject = objRestaurant.getJSONObject("opening_hours")
@@ -381,7 +372,9 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
                     name = name,
                     rating = rating,
                     totalRatings = totalRatings,
-                    photo = photo_url //demoPhotos[i % 9]
+                    photo = photo_url, //demoPhotos[i % 9]
+                    lat = lat,
+                    lng = lng
                 )
             )
             Log.d("GoogleApi", restaurants[restaurants.size - 1].name)

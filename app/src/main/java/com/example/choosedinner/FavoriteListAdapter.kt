@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class FavoriteListAdapter(
+class FavoriteListAdapter (
     private var restaurants: List<Restaurant> = emptyList()
 ) : RecyclerView.Adapter<FavoriteListAdapter.ViewHolder>() {
 
