@@ -1,51 +1,53 @@
 package com.example.choosedinner
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class FavoriteListAdapter (
-    private var restaurants: List<Restaurant> = emptyList()
-) : RecyclerView.Adapter<FavoriteListAdapter.ViewHolder>() {
+class FavoriteListAdapter (private val context: Context,
+                           private val dataSource: ArrayList<Favorites>) : BaseAdapter() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        return ViewHolder(inflater.inflate(R.layout.item_restaurant, parent, false))
+    private val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+    //1
+    override fun getCount(): Int {
+        return dataSource.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val restaurant = restaurants[position]
-        holder.name.text = "${restaurant.id}. ${restaurant.name}"
-        holder.rating.text = "Rating:${restaurant.rating}. Total:${restaurant.totalRatings}"
-        Glide.with(holder.image)
-            .load(restaurant.photo)
-            .into(holder.image)
-        holder.itemView.setOnClickListener { v ->
-            Toast.makeText(v.context, restaurant.name, Toast.LENGTH_SHORT).show()
-        }
+    //2
+    override fun getItem(position: Int): Any {
+        return dataSource[position]
     }
 
-    override fun getItemCount(): Int {
-        return restaurants.size
+    //3
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
     }
 
-    fun setRestaurants(restaurants: List<Restaurant>) {
-        this.restaurants = restaurants
-    }
+    //4
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        // Get view for row item
+        val rowView = inflater.inflate(R.layout.item_favorite, parent, false)
 
-    fun getRestaurants(): List<Restaurant> {
-        return restaurants
-    }
+        // Get element
+        val nameTextView = rowView.findViewById(R.id.name) as TextView
+        val rateTextView = rowView.findViewById(R.id.rate) as TextView
+        val latTextView = rowView.findViewById(R.id.lat) as TextView
+        val lngTextView = rowView.findViewById(R.id.lng) as TextView
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val name: TextView = view.findViewById(R.id.item_name)
-        var rating: TextView = view.findViewById(R.id.item_rating)
-        var image: ImageView = view.findViewById(R.id.item_image)
-    }
+        val recipe = getItem(position) as Favorites
+        nameTextView.text = recipe.name
+        rateTextView.text = recipe.rating
+        latTextView.text = recipe.lat
+        lngTextView.text = recipe.lng
 
+        return rowView
+    }
 }

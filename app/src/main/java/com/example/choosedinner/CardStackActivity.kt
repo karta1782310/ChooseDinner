@@ -35,8 +35,9 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
     private val manager by lazy { CardStackLayoutManager(this, this) }
     private val adapter by lazy { CardStackAdapter(createRestaurants()) }
 
-    private val myIntent = Intent(this, FavoritesActivity::class.java)
+    private val myIntent by lazy { Intent(this, FavoritesActivity::class.java) }
     private val myBundle = Bundle()
+    private val myFavor = ArrayList<Favorites>()
 
     private var myJson: String? = null
     private var myLocation: String? = null
@@ -104,7 +105,8 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
             lat =  view.findViewById<TextView>(R.id.lat).text.toString(),
             lng =  view.findViewById<TextView>(R.id.lng).text.toString()
         )
-        myIntent.putExtra("Like", tmp)
+        myFavor.add(tmp)
+        Log.d("myFavorList", "${myFavor.size}")
         Log.d("CardStackView", "onCardDisappeared: ($position) ${textView.text}")
     }
 
@@ -221,6 +223,9 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
     }
 
     private fun gotoFavorite() {
+        myBundle.putSerializable("Favorites", myFavor)
+//        myIntent.putExtra("Like", myBundle);
+        myIntent.putExtras(myBundle)
         startActivity(myIntent)
     }
 

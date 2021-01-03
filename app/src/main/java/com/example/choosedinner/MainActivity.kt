@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private val locationButtonHandler = View.OnClickListener { view ->
+    private val locationButtonHandler = View.OnClickListener { _view ->
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
             != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), MY_PERMISSIONS_REQUEST_LOCATION)
