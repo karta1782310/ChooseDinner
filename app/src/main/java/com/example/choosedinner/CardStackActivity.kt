@@ -1,9 +1,6 @@
 package com.example.choosedinner
 
 import android.content.Intent
-import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -40,25 +37,11 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
     private val myFavor = ArrayList<Favorites>()
 
     private var myJson: String? = null
-    private var myLocation: String? = null
-    private var locationManager : LocationManager? = null
-    private val demoPhotos: List<String> = listOf(
-        "https://source.unsplash.com/Xq1ntWruZQI/600x800",
-        "https://source.unsplash.com/NYyCqdBOKwc/600x800",
-        "https://source.unsplash.com/buF62ewDLcQ/600x800",
-        "https://source.unsplash.com/THozNzxEP3g/600x800",
-        "https://source.unsplash.com/PeFk7fzxTdk/600x800",
-        "https://source.unsplash.com/LrMWHKqilUw/600x800",
-        "https://source.unsplash.com/HN-5Z6AmxrM/600x800",
-        "https://source.unsplash.com/CdVAUADdqEc/600x800",
-        "https://source.unsplash.com/AWh9C-QjhE4/600x800"
-    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Thread(BackgroundFetcher()).start()
 
-        getLocation()
         setContentView(R.layout.activity_cardstack)
         setupNavigation()
         setupCardStackView()
@@ -110,6 +93,12 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
         Log.d("CardStackView", "onCardDisappeared: ($position) ${textView.text}")
     }
 
+    private fun gotoFavorite() {
+        myBundle.putSerializable("Favorites", myFavor)
+        myIntent.putExtras(myBundle)
+        startActivity(myIntent)
+    }
+
     private fun setupNavigation() {
         // Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -139,11 +128,6 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
     }
 
     private fun setupCardStackView() {
-//        if (Build.VERSION.SDK_INT > 9) {
-//            val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
-//            StrictMode.setThreadPolicy(policy)
-//        }
-
         initialize()
     }
 
@@ -222,102 +206,6 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
         result.dispatchUpdatesTo(adapter)
     }
 
-    private fun gotoFavorite() {
-        myBundle.putSerializable("Favorites", myFavor)
-//        myIntent.putExtra("Like", myBundle);
-        myIntent.putExtras(myBundle)
-        startActivity(myIntent)
-    }
-
-//    private fun addFirst(size: Int) {
-//        val old = adapter.getSpots()
-//        val new = mutableListOf<Spot>().apply {
-//            addAll(old)
-//            for (i in 0 until size) {
-//                add(manager.topPosition, createSpot())
-//            }
-//        }
-//        val callback = SpotDiffCallback(old, new)
-//        val result = DiffUtil.calculateDiff(callback)
-//        adapter.setSpots(new)
-//        result.dispatchUpdatesTo(adapter)
-//    }
-//
-//    private fun addLast(size: Int) {
-//        val old = adapter.getSpots()
-//        val new = mutableListOf<Spot>().apply {
-//            addAll(old)
-//            addAll(List(size) { createSpot() })
-//        }
-//        val callback = SpotDiffCallback(old, new)
-//        val result = DiffUtil.calculateDiff(callback)
-//        adapter.setSpots(new)
-//        result.dispatchUpdatesTo(adapter)
-//    }
-//
-//    private fun removeFirst(size: Int) {
-//        if (adapter.getSpots().isEmpty()) {
-//            return
-//        }
-//
-//        val old = adapter.getSpots()
-//        val new = mutableListOf<Spot>().apply {
-//            addAll(old)
-//            for (i in 0 until size) {
-//                removeAt(manager.topPosition)
-//            }
-//        }
-//        val callback = SpotDiffCallback(old, new)
-//        val result = DiffUtil.calculateDiff(callback)
-//        adapter.setSpots(new)
-//        result.dispatchUpdatesTo(adapter)
-//    }
-//
-//    private fun removeLast(size: Int) {
-//        if (adapter.getSpots().isEmpty()) {
-//            return
-//        }
-//
-//        val old = adapter.getSpots()
-//        val new = mutableListOf<Spot>().apply {
-//            addAll(old)
-//            for (i in 0 until size) {
-//                removeAt(this.size - 1)
-//            }
-//        }
-//        val callback = SpotDiffCallback(old, new)
-//        val result = DiffUtil.calculateDiff(callback)
-//        adapter.setSpots(new)
-//        result.dispatchUpdatesTo(adapter)
-//    }
-//
-
-
-    private val locationListener: LocationListener = object : LocationListener {
-        override fun onLocationChanged(location: Location) {
-            myLocation = "${location.latitude},${location.longitude}"
-        }
-        override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
-        override fun onProviderEnabled(provider: String) {}
-        override fun onProviderDisabled(provider: String) {}
-    }
-
-    private fun getLocation() {
-        locationManager = getSystemService(LOCATION_SERVICE) as LocationManager?
-        try {
-            // Request location updates
-            locationManager?.requestLocationUpdates(
-                LocationManager.NETWORK_PROVIDER,
-                0L,
-                0f,
-                locationListener
-            )
-            Log.d("getLocation", myLocation.toString())
-        } catch (ex: SecurityException) {
-            Log.d("myTag", "Security Exception, no location available")
-        }
-    }
-
     private fun createRestaurants(): List<Restaurant> {
 //        val apiResponse = URL("https://github.com/karta1782310/ChooseDinner/blob/master/app/src/main/assets/NearBySearch.json").readText()
 
@@ -363,14 +251,6 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
                 Log.d("Json", e.toString())
             }
 
-//            try {
-//                val openingHours: JSONObject = objRestaurant.getJSONObject("opening_hours")
-//                val opening: Boolean = openingHours.getBoolean("open_now")
-//                if (!opening) continue
-//            } catch (e: JSONException) {
-//                Log.d("JSONobject", "Not get opening hours.")
-//            }
-
             restaurants.add(
                 Restaurant(
                     placeID = placeID,
@@ -396,7 +276,26 @@ class CardStackActivity : AppCompatActivity(), CardStackListener {
 
     inner class BackgroundFetcher : Runnable {
         override fun run() {  // (3)
-            val url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=22.6278362,%20120.2630863&radius=1500&type=restaurant&key=${BuildConfig.API_KEY}"
+            val b = intent.extras
+            val latlng = b?.getString("latlng")
+            val place = b?.getString("place")
+
+            var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=22.6278362,120.2630863&radius=1500&type=restaurant&key=${BuildConfig.API_KEY}"
+            if (latlng != null) {
+                url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latlng}&radius=1500&type=restaurant&key=${BuildConfig.API_KEY}"
+            }
+            else if (place != null) {
+                url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${place}&inputtype=textquery&key=${BuildConfig.API_KEY}"
+                val placeID = JSONObject(getJson(url)).getJSONArray("candidates").getJSONObject(0).getString("place_id")
+
+                url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeID}&key=${BuildConfig.API_KEY}"
+                val loc = JSONObject(getJson(url)).getJSONObject("result").getJSONObject("geometry").getJSONObject("location")
+                val lat = loc.getString("lat")
+                val lng = loc.getString("lng")
+
+                url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=1500&type=restaurant&key=${BuildConfig.API_KEY}"
+            }
+
             myJson = getJson(url)
         }
     }

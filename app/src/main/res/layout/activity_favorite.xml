@@ -10,6 +10,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -17,7 +18,16 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:title="Favorites"></androidx.appcompat.widget.Toolbar>
+                app:title="Favorites">
+            </androidx.appcompat.widget.Toolbar>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="Random" />
+
         </com.google.android.material.appbar.AppBarLayout>
 
         <ListView
